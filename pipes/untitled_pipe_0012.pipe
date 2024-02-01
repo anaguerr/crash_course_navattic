@@ -1,0 +1,12 @@
+TOKEN "untitled_pipe_0012_endpoint_read_7006" READ
+
+NODE node_1
+SQL >
+    %
+    SELECT *
+    FROM yellow_tripdata_2018_01
+    where passenger_count ={{ Int16(passenger_count, 3) }}
+
+NODE endpoint
+SQL >
+    SELECT count() FROM node_1
